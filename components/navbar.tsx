@@ -124,18 +124,21 @@ export function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
             className="fixed inset-0 z-[90] bg-white dark:bg-slate-950 flex flex-col md:hidden"
           >
-            <div className="flex-grow flex flex-col items-center justify-center p-8 space-y-8">
+            {/* Background Accent */}
+            <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_top_right,rgba(14,165,164,0.05),transparent_40%)]" />
+
+            <div className="flex-grow flex flex-col items-center justify-start p-8 pt-32 space-y-8 relative z-10 overflow-y-auto">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.href}
                   initial={{ opacity: 0, scale: 0.9, y: 10 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{ delay: 0.1 + i * 0.05 }}
+                  transition={{ delay: 0.05 + i * 0.05 }}
                   className="w-full text-center"
                 >
                   <Link
@@ -156,7 +159,7 @@ export function Navbar() {
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
+                transition={{ delay: 0.35 }}
                 className="w-full pt-8 space-y-8 border-t border-slate-100 dark:border-white/10"
               >
                 <Button 
