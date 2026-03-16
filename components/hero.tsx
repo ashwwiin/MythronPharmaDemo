@@ -7,10 +7,10 @@ import { ArrowRight, Sparkles, Microscope, Beaker } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[100dvh] flex items-center pt-32 pb-24 md:pt-40 md:pb-32">
-      {/* Seamless Blend Background */}
-      <div className="absolute inset-0 -z-10 bg-background" />
-      <div className="absolute inset-x-0 top-0 -z-10 h-full bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
+    <section className="relative min-h-[100dvh] flex items-center pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden">
+      {/* Premium Background System */}
+      <div className="absolute inset-0 -z-10 bg-[#F8FAFC] dark:bg-slate-950" />
+      <div className="absolute inset-x-0 top-0 -z-10 h-full bg-[radial-gradient(circle_at_top_right,rgba(14,165,164,0.08),transparent_50%),radial-gradient(circle_at_bottom_left,rgba(30,58,138,0.05),transparent_50%)]" />
       
       {/* Animated Blobs */}
       <motion.div 

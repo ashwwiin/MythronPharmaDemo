@@ -32,7 +32,7 @@ export default function ProductDetailPage() {
   }
 
   return (
-    <div className="py-20 md:py-28">
+    <div className="pt-28 pb-20 md:pt-36 md:pb-28">
       <div className="container mx-auto px-4 md:px-6">
         <Link 
           href="/products" 
@@ -46,7 +46,7 @@ export default function ProductDetailPage() {
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="sticky top-28"
+            className="md:sticky md:top-32"
           >
             <div className="aspect-[4/5] rounded-[2.5rem] overflow-hidden bg-slate-100 border-8 border-white shadow-2xl p-8 flex items-center justify-center">
               <img 

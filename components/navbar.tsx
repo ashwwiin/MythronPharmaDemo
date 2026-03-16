@@ -46,11 +46,11 @@ export function Navbar() {
     <>
       <nav 
         className={cn(
-          "fixed top-0 left-0 right-0 w-full z-[100] transition-all duration-500",
+          "fixed top-0 left-0 right-0 w-full z-[100] transition-all duration-500 ease-in-out",
           // Solid background on mobile or when scrolled/open
           (scrolled || isOpen)
-            ? "bg-white/90 dark:bg-slate-950/90 backdrop-blur-xl border-b border-slate-100 dark:border-white/10 shadow-sm py-4" 
-            : "bg-white/80 md:bg-transparent backdrop-blur-md md:backdrop-blur-none border-b border-slate-100 md:border-none py-4 md:py-6"
+            ? "bg-white/95 dark:bg-slate-950/95 backdrop-blur-2xl border-b border-slate-200/50 dark:border-white/5 shadow-sm py-3" 
+            : "bg-white/40 md:bg-transparent backdrop-blur-lg md:backdrop-blur-none border-b border-white/20 md:border-none py-4 md:py-6"
         )}
       >
         <div className="container mx-auto px-4 md:px-10 lg:px-16">
@@ -58,12 +58,12 @@ export function Navbar() {
             {/* Logo Section */}
             <div className="flex items-center">
               <Link href="/" className="group flex items-center gap-2" onClick={() => setIsOpen(false)}>
-                <div className="relative h-10 w-36 md:h-12 md:w-56 overflow-hidden flex items-center">
+                <div className="relative h-10 w-40 md:h-12 md:w-64 overflow-hidden flex items-center">
                   <img
                     src="/logo.png"
                     alt="Mythron Pharma"
                     loading="eager"
-                    className="h-full w-full object-contain scale-[1.3] md:scale-[1.5] transition-transform duration-300 group-hover:scale-[1.4] min-h-[40px]"
+                    className="h-full w-full object-contain scale-[1.8] md:scale-[2.2] transition-transform duration-300 group-hover:scale-[1.9] md:group-hover:scale-[2.3] min-h-[40px]"
                     onError={(e) => {
                       (e.target as HTMLImageElement).parentElement?.classList.add('hidden');
                       (e.target as HTMLImageElement).parentElement?.nextElementSibling?.classList.remove('hidden');

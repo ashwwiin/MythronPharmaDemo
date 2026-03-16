@@ -96,24 +96,27 @@ export function FocusAreas() {
           {areas.map((area, index) => (
             <motion.div
               key={area.title}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: index * 0.1 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1, duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true }}
-              className="relative group cursor-pointer overflow-hidden rounded-3xl"
+              className="relative group cursor-pointer overflow-hidden rounded-[2.5rem] shadow-lg"
             >
-              <div className="aspect-[4/5] overflow-hidden">
+              <div className="aspect-[3/4] overflow-hidden">
                 <img 
                   src={area.image} 
-                  alt={area.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  alt={area.title}
+                  loading="lazy" 
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/20 to-transparent flex flex-col justify-end p-8">
-                <h3 className="text-2xl font-bold text-white mb-2">{area.title}</h3>
-                <p className="text-slate-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
-                  {area.description}
-                </p>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent flex flex-col justify-end p-8 transition-colors duration-500 group-hover:from-primary/90">
+                <h3 className="text-2xl font-black text-white mb-2 transform transition-transform duration-500 group-hover:-translate-y-2">{area.title}</h3>
+                <div className="h-0 group-hover:h-auto overflow-hidden transition-all duration-500 opacity-0 group-hover:opacity-100">
+                  <p className="text-slate-200 text-sm font-medium leading-relaxed">
+                    {area.description}
+                  </p>
+                </div>
               </div>
             </motion.div>
           ))}

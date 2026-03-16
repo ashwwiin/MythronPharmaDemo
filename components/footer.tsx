@@ -6,16 +6,20 @@ export function Footer() {
     <footer className="bg-slate-950 text-white pt-10 md:pt-16 pb-6 md:pb-8 overflow-hidden relative">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
       
+      {/* Subtle Background Glow */}
+      <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-primary/10 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute -top-24 -left-24 w-64 h-64 bg-secondary/10 blur-[80px] rounded-full pointer-events-none" />
+      
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="flex flex-col items-center text-center space-y-8 md:space-y-12">
           {/* Central Brand Section */}
           <div className="space-y-6 max-w-xl">
             <Link href="/" className="flex flex-col items-center group">
-              <div className="relative h-16 w-52 overflow-hidden mb-1">
+              <div className="relative h-16 w-64 overflow-hidden mb-1">
                 <img
                   src="/logo.png"
                   alt="Mythron Pharma"
-                  className="h-full w-full object-contain scale-[1.65] transition-transform duration-500 group-hover:scale-[1.75] brightness-0 invert"
+                  className="h-full w-full object-contain scale-[2.1] transition-transform duration-500 group-hover:scale-[2.2] brightness-0 invert"
                 />
               </div>
               <p className="text-slate-400 text-sm font-medium leading-relaxed">
