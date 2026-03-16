@@ -34,7 +34,10 @@ export function Navbar() {
 
   React.useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      // Use requestAnimationFrame for smoother scroll state updates
+      requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 60);
+      });
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -55,21 +58,29 @@ export function Navbar() {
             {/* Logo */}
             <div className="flex items-center -ml-2 md:-ml-4">
               <Link href="/" className="group" onClick={() => setIsOpen(false)}>
-                <div className="relative h-12 w-40 md:h-16 md:w-64 overflow-hidden">
+                <div className="relative h-12 w-40 md:h-16 md:w-64 overflow-hidden flex items-center">
                   <img
                     src="/logo.png"
                     alt="Mythron Pharma"
-                    className="h-full w-full object-contain scale-[1.4] md:scale-[1.5] transition-transform duration-300 group-hover:scale-[1.6]"
+                    loading="eager"
+                    // @ts-ignore
+                    fetchPriority="high"
+                    decoding="async"
+                    className="h-full w-full object-contain scale-[1.3] md:scale-[1.5] transition-transform duration-300 group-hover:scale-[1.4] will-change-transform"
+                    style={{ aspectRatio: '40/12' }}
                     onError={(e) => {
                       (e.target as HTMLImageElement).style.display = 'none';
-                      (e.target as HTMLImageElement).parentElement!.innerHTML = `
-                        <div class="flex items-center space-x-2">
-                          <div class="bg-primary p-2 rounded-xl text-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="12" r="10"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M2 12h2"/><path d="M20 12h2"/></svg>
+                      const parent = (e.target as HTMLImageElement).parentElement;
+                      if (parent) {
+                        parent.innerHTML = `
+                          <div class="flex items-center space-x-2">
+                            <div class="bg-primary p-2 rounded-xl text-white">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="12" r="10"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M2 12h2"/><path d="M20 12h2"/></svg>
+                            </div>
+                            <span class="text-lg font-bold tracking-tight text-slate-900 leading-none">Mythron</span>
                           </div>
-                          <span class="text-lg font-bold tracking-tight text-slate-900 leading-none">Mythron</span>
-                        </div>
-                      `;
+                        `;
+                      }
                     }}
                   />
                 </div>
@@ -121,7 +132,7 @@ export function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-[90] bg-white dark:bg-slate-950 pt-28 lg:hidden"
+            className="fixed inset-0 z-[90] bg-white dark:bg-slate-950 pt-28 lg:hidden h-[100dvh]"
           >
             <div className="flex flex-col items-center justify-center space-y-10 px-6 mt-10">
               {navLinks.map((link, i) => (
