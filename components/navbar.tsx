@@ -63,10 +63,8 @@ export function Navbar() {
                     src="/logo.png"
                     alt="Mythron Pharma"
                     loading="eager"
-                    // @ts-ignore
-                    fetchPriority="high"
                     decoding="async"
-                    className="h-full w-full object-contain scale-[1.3] md:scale-[1.5] transition-transform duration-300 group-hover:scale-[1.4] will-change-transform"
+                    className="h-full w-full object-contain scale-[1.2] md:scale-[1.5] transition-transform duration-300 group-hover:scale-[1.3] will-change-transform"
                     style={{ aspectRatio: '40/12' }}
                     onError={(e) => {
                       (e.target as HTMLImageElement).style.display = 'none';
