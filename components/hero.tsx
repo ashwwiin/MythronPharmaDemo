@@ -7,7 +7,7 @@ import { ArrowRight, Sparkles, Microscope, Beaker } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[100dvh] flex items-center overflow-hidden pt-64 pb-24 md:pt-56 md:pb-32">
+    <section className="relative min-h-[100dvh] flex items-center pt-32 pb-24 md:pt-40 md:pb-32">
       {/* Seamless Blend Background */}
       <div className="absolute inset-0 -z-10 bg-background" />
       <div className="absolute inset-x-0 top-0 -z-10 h-full bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
@@ -119,7 +119,7 @@ export function Hero() {
             <motion.div
               animate={{ y: [0, -20, 0], x: [0, 10, 0] }}
               transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-              className="absolute -top-10 -right-10 p-6 bg-white dark:bg-slate-900 rounded-[2rem] shadow-2xl z-20 border border-slate-100 dark:border-white/10"
+              className="absolute top-0 right-0 p-6 bg-white dark:bg-slate-900 rounded-[2rem] shadow-2xl z-20 border border-slate-100 dark:border-white/10"
             >
               <div className="flex items-center space-x-3">
                 <div className="bg-primary/10 p-3 rounded-2xl text-primary">

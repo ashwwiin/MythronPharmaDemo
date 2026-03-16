@@ -32,7 +32,7 @@ const pillars = [
 export default function ValuesPage() {
   return (
     <div className="flex flex-col">
-      <section className="relative overflow-hidden pt-32 pb-24 md:pt-48 md:pb-32 bg-slate-50 dark:bg-slate-950">
+      <section className="relative overflow-hidden pt-28 pb-24 md:pt-40 md:pb-32 bg-slate-50 dark:bg-slate-950">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,rgba(14,165,164,0.05)_0%,transparent_50%)]" />
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <SectionTitle 

@@ -3,7 +3,7 @@ import { SectionTitle } from "@/components/section-title";
 
 export default function ProductsPage() {
   return (
-    <div className="pt-32 pb-24 md:pt-48 md:pb-32">
+    <div className="pt-28 pb-24 md:pt-40 md:pb-32">
       <div className="container mx-auto px-4 md:px-6">
         <SectionTitle 
           title="Our Product Portfolio" 
