@@ -7,7 +7,7 @@ import { ArrowRight, Sparkles, Microscope, Beaker } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[95vh] flex items-center overflow-hidden -mt-24 pt-56 pb-24 md:pt-64 md:pb-32">
+    <section className="relative min-h-screen flex items-center overflow-hidden pt-40 pb-24 md:pt-56 md:pb-32">
       {/* Seamless Blend Background */}
       <div className="absolute inset-0 -z-10 bg-background" />
       <div className="absolute inset-x-0 top-0 -z-10 h-full bg-gradient-to-b from-primary/5 via-transparent to-transparent" />

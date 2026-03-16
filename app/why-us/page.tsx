@@ -43,7 +43,7 @@ const features = [
 
 export default function WhyUsPage() {
   return (
-    <div className="-mt-24 pt-56 pb-24 md:pt-64 md:pb-32 bg-white dark:bg-slate-950">
+    <div className="pt-32 pb-24 md:pt-48 md:pb-32 bg-white dark:bg-slate-950">
       <div className="container mx-auto px-4 md:px-6">
         <SectionTitle 
           title="The Mythron Edge" 

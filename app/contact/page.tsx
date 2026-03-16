@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
 export default function ContactPage() {
   return (
-    <div className="-mt-24 pt-56 pb-24 md:pt-64 md:pb-32 bg-[#F8FAFC]">
+    <div className="pt-32 pb-24 md:pt-48 md:pb-32 bg-[#F8FAFC]">
       <div className="container mx-auto px-4 md:px-6">
         <SectionTitle 
           title="Get in Touch" 
